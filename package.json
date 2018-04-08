@@ -1,0 +1,55 @@
+{
+  "name": "nodessh",
+  "description": "A Nosejs ssh interface",
+  "version": "0.1.0",
+  "homepage": "https://github.com/chocof/nodessh",
+  "author": {
+    "name": "chocof",
+    "email": "fotisdtsokos@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/chocof/nodessh.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chocof/nodessh/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/chocof/nodessh/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "@types/node": "^9.6.2",
+    "chai": "^4.1.2",
+    "grunt": "^1.0.2",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-nodeunit": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-mocha-istanbul": "^5.0.2",
+    "grunt-newer": "^1.3.0",
+    "grunt-run": "^0.8.0",
+    "grunt-ts": "^6.0.0-beta.19",
+    "grunt-tslint": "^5.0.1",
+    "grunt-typescript": "^0.8.0",
+    "typescript": "^2.8.1"
+  },
+  "keywords": [],
+  "dependencies": {
+    "debug": "^3.1.0",
+    "dotenv": "^5.0.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.0.5",
+    "socket.io": "^2.1.0",
+    "tslint": "^5.9.1",
+    "winston": "^2.4.1"
+  }
+}
