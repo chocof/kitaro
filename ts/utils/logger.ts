@@ -1,20 +1,20 @@
-const winston = require("winston");
+import {Logger, LoggerInstance, transports} from "winston";
 
-if (!process.env.ACCESS_LOG || !process.env.ERROR_LOG){
-	throw new Error("[-]You have to define log files in .env file");
+if (!process.env.ACCESS_LOG || !process.env.ERROR_LOG) {
+  throw new Error("[-]You have to define log files in .env file");
 }
-export const logger = new (winston.Logger)({
-	transports: [
-	new (winston.transports.Console)({timestamp: true}),
-	new (winston.transports.File)({
-		name: 'info-file',
-		filename: process.env.ACCESS_LOG,
-		level: 'info'
-	}),
-	new (winston.transports.File)({
-		name: 'error-file',
-		filename: process.env.ERROR_LOG,
-		level: 'error'
-	})
-  ]
+export const logger: LoggerInstance = new (Logger)({
+  transports: [
+    new (transports.Console)({timestamp: true}),
+    new (transports.File)({
+      filename: process.env.ACCESS_LOG,
+      level: "info",
+      name: "info-file",
+    }),
+    new (transports.File)({
+      filename: process.env.ERROR_LOG,
+      level: "error",
+      name: "error-file",
+    }),
+  ],
 });

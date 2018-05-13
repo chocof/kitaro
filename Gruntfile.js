@@ -75,11 +75,12 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-run');
 	grunt.loadNpmTasks('grunt-newer');
 	grunt.loadNpmTasks("grunt-tslint");
-	grunt.loadNpmTasks("grunt-npm-command"); 	
+	grunt.loadNpmTasks("grunt-npm-command");
 	// Default task.
 	grunt.registerTask('default', ['ts', 'run']);
 	grunt.registerTask('build', ['npm-command', 'ts','tslint', 'jshint', 'mocha_istanbul']);
 	grunt.registerTask('test', ['mocha_istanbul']);
 	grunt.registerTask('lint', ['ts', 'tslint', 'jshint']);
+	grunt.registerTask('compile', ['ts']);
 
 };

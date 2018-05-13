@@ -4,3 +4,46 @@
 {"level":"info","message":"Started server on port ${PORT}","timestamp":"2018-04-08T16:52:03.802Z"}
 {"level":"info","message":"Started server on port 8080","timestamp":"2018-04-08T16:52:20.810Z"}
 {"level":"info","message":"Started node on port 8080","timestamp":"2018-04-15T15:41:38.704Z"}
+{"level":"info","message":"Kitaro Microservice is listening on port 6666","timestamp":"2018-05-13T19:44:16.373Z"}
+{"level":"info","message":"Kitaro Microservice is listening on port 6666","timestamp":"2018-05-13T19:50:08.331Z"}
+{"level":"info","message":"Kitaro Microservice is listening on port 6666","timestamp":"2018-05-13T19:56:47.185Z"}
+{"level":"info","message":"Kitaro Microservice is listening on port 6666","timestamp":"2018-05-13T20:00:10.994Z"}
+{"level":"info","message":"Kitaro Microservice is listening on port 6666","timestamp":"2018-05-13T20:17:15.354Z"}
+{"level":"info","message":"hgfjh","timestamp":"2018-05-13T20:17:15.354Z"}
+{"level":"info","message":"Kitaro Microservice is listening on port 6666","timestamp":"2018-05-13T20:18:40.548Z"}
+{"level":"info","message":"hgfjh","timestamp":"2018-05-13T20:18:40.548Z"}
+{"level":"info","message":"Kitaro Microservice is listening on port 6666","timestamp":"2018-05-13T20:19:47.737Z"}
+{"level":"info","message":"hgfjh","timestamp":"2018-05-13T20:19:47.737Z"}
+{"level":"info","message":"Kitaro Microservice is listening on port 6666","timestamp":"2018-05-13T20:22:28.981Z"}
+{"level":"info","message":"hgfjh","timestamp":"2018-05-13T20:22:28.981Z"}
+{"level":"info","message":"sending","timestamp":"2018-05-13T21:04:36.809Z"}
+{"level":"info","message":"sending","timestamp":"2018-05-13T21:09:34.686Z"}
+{"level":"info","message":"sending","timestamp":"2018-05-13T21:09:46.024Z"}
+{"level":"info","message":"0","timestamp":"2018-05-13T21:09:46.032Z"}
+{"level":"info","message":"sending","timestamp":"2018-05-13T21:10:25.505Z"}
+{"level":"info","message":"0","timestamp":"2018-05-13T21:10:25.516Z"}
+{"level":"info","message":"sending","timestamp":"2018-05-13T21:10:38.057Z"}
+{"level":"info","message":"{\"type\":0}","timestamp":"2018-05-13T21:10:38.067Z"}
+{"level":"info","message":"sending","timestamp":"2018-05-13T21:13:43.029Z"}
+{"level":"info","message":"{\"type\":0}","timestamp":"2018-05-13T21:13:43.040Z"}
+{"level":"info","message":"sending","timestamp":"2018-05-13T21:14:13.372Z"}
+{"level":"info","message":"{\"type\":0}","timestamp":"2018-05-13T21:14:13.379Z"}
+{"level":"info","message":"sending","timestamp":"2018-05-13T21:14:22.351Z"}
+{"level":"info","message":"{\"type\":0}","timestamp":"2018-05-13T21:14:22.359Z"}
+{"level":"info","message":"sending","timestamp":"2018-05-13T21:14:50.452Z"}
+{"level":"info","message":"{\"type\":0}","timestamp":"2018-05-13T21:14:50.460Z"}
+{"level":"info","message":"sending","timestamp":"2018-05-13T21:15:05.867Z"}
+{"level":"info","message":"{\"type\":0}","timestamp":"2018-05-13T21:15:05.878Z"}
+{"level":"info","message":"sent","timestamp":"2018-05-13T21:15:05.879Z"}
+{"level":"info","message":"Received function list from Kitaro Microservice @127.0.0.1:3226","timestamp":"2018-05-13T21:15:05.880Z"}
+{"level":"info","message":"\"shah\"","timestamp":"2018-05-13T21:15:05.880Z"}
+{"level":"info","message":"{\"type\":0}","timestamp":"2018-05-13T21:16:45.807Z"}
+{"level":"info","message":"{\"type\":0}","timestamp":"2018-05-13T21:17:01.881Z"}
+{"level":"info","message":"{\"type\":0}","timestamp":"2018-05-13T21:18:03.181Z"}
+{"level":"info","message":"{\"type\":0}","timestamp":"2018-05-13T21:18:24.222Z"}
+{"level":"info","message":"{\"type\":0}","timestamp":"2018-05-13T21:20:43.583Z"}
+{"level":"info","message":"{\"type\":0}","timestamp":"2018-05-13T21:21:34.400Z"}
+{"level":"info","message":"{\"type\":0}","timestamp":"2018-05-13T21:22:38.637Z"}
+{"level":"info","message":"{\"type\":0}","timestamp":"2018-05-13T21:36:08.719Z"}
+{"level":"info","message":"Received function list from Kitaro Microservice @127.0.0.1:3226","timestamp":"2018-05-13T21:36:08.723Z"}
+{"level":"info","message":"[{\"label\":\"myFunction\",\"returns\":\"function\"}]","timestamp":"2018-05-13T21:36:08.723Z"}

@@ -1,3 +1,3 @@
 export {logger} from "./logger";
-export {KitaroError, KitaroErrorCodes} from "./error";
-export {KitaroMessageType, KitaroMessage} from "./kitaro_message";
+export {KitaroError, KitaroErrorCodes} from "./kitaro_error";
+export {KitaroMessageType, IKitaroMessage} from "./kitaro_message";

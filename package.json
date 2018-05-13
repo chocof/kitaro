@@ -46,6 +46,8 @@
   "keywords": [],
   "dependencies": {
     "@types/axon": "^2.0.0",
+    "@types/dotenv": "^4.0.3",
+    "@types/winston": "^2.3.9",
     "axon": "^2.0.3",
     "bluebird": "^3.5.1",
     "debug": "^3.1.0",
