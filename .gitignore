@@ -1,4 +1,7 @@
 node_modules
 coverage
 .tscache
-
+log
+lib
+coverage
+ts/.baseDir.ts

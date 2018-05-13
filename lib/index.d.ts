@@ -1,1 +1,1 @@
-export {};
+export { Kitaro, RemoteKitaro } from "./kitaro";

@@ -3,3 +3,4 @@
 {"level":"info","message":"Started server on port ","timestamp":"2018-04-08T16:50:50.103Z"}
 {"level":"info","message":"Started server on port ${PORT}","timestamp":"2018-04-08T16:52:03.802Z"}
 {"level":"info","message":"Started server on port 8080","timestamp":"2018-04-08T16:52:20.810Z"}
+{"level":"info","message":"Started node on port 8080","timestamp":"2018-04-15T15:41:38.704Z"}

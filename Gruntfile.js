@@ -3,6 +3,11 @@
 module.exports = function(grunt) {
 
 	grunt.initConfig({
+		"npm-command": {
+			all: {
+				pwd: '.'
+			}
+		},
 		ts: {
 			all: {
 				tsconfig: 'tsconfig.json'
@@ -20,7 +25,7 @@ module.exports = function(grunt) {
 				fix: false
 			},
 			files: {
-				src: ['lib/**/*.ts']
+				src: ['ts/**/*.ts']
 			}
 		},
 		jshint: {
@@ -70,10 +75,11 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-run');
 	grunt.loadNpmTasks('grunt-newer');
 	grunt.loadNpmTasks("grunt-tslint");
+	grunt.loadNpmTasks("grunt-npm-command"); 	
 	// Default task.
 	grunt.registerTask('default', ['ts', 'run']);
-	grunt.registerTask('build', ['ts','tslint', 'jshint', 'mocha_istanbul']);
+	grunt.registerTask('build', ['npm-command', 'ts','tslint', 'jshint', 'mocha_istanbul']);
 	grunt.registerTask('test', ['mocha_istanbul']);
-	grunt.registerTask('lint', ['tslint', 'jshint']);
+	grunt.registerTask('lint', ['ts', 'tslint', 'jshint']);
 
 };
