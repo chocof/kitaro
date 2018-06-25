@@ -1,7 +1,7 @@
 # Kitaro
 
 Kitaro provides RPC functionality by using tj's [axon](https://github.com/tj/axon).
-Kitaro can be used to easily develop microservices that interract with each other.
+Kitaro can be used to easily develop microservices that interact with each other.
 
 _(Still in development, more features coming soon)_
 
