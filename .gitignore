@@ -5,3 +5,4 @@ log
 lib
 coverage
 ts/.baseDir.ts
+.vscode

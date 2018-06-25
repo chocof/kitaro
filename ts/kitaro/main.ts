@@ -46,6 +46,7 @@ export class Kitaro {
   }
 
   public addFunction(label: string, fn: AnyPromiseFunction, doc: IDocType): boolean {
+    // TODO read function from function code
     if (label in this.myFunctions) {
       throw new KitaroError(KitaroErrorCodes.functionExists, "This function already exists");
     }
@@ -71,25 +72,34 @@ export class Kitaro {
   public async close() {
     try {
       this.Receiver.close();
-    } catch(err) {
-      throw new KitaroError(KitaroErrorCodes.connError ,"Could not close socket");
+    } catch (err) {
+      throw new KitaroError(KitaroErrorCodes.connError, "Could not close socket");
     }
-    return this
+    return this;
   }
 
   private async handleKitaroRegister() {
-    return Object.keys(this.myFunctions).map((k) => ({
+    return Object.keys(this.myFunctions).map(k => ({
       label: k,
       returns: typeof this.myFunctions[k].fn,
     }));
   }
 
   private async handleUseFunction(payload: IKitaroMessage) {
-    logger.info(JSON.stringify(payload));
+    const params = payload.params ? payload.params : [];
+    // check if function exists
+    if (!payload.fn || !(payload.fn in this.myFunctions)) {
+      return {
+        error: `Function ${payload.fn} not Found`,
+        type: KitaroMessageType.KITARO_ERROR,
+      };
+    }
+
+    return this.myFunctions[payload.fn].fn(...params);
   }
 
   private handleMessage = async (message: IKitaroMessage, reply: (rep: any) => void) => {
-    logger.info(JSON.stringify(message))
+    logger.info(`Receiced Message : ${JSON.stringify(message)}`);
     switch (message.type) {
       case KitaroMessageType.KITARO_REGISTER:
         reply(await this.handleKitaroRegister());

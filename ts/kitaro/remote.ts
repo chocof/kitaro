@@ -1,5 +1,6 @@
 import {ReqSocket} from "axon";
 import {IKitaroMessage, KitaroError, KitaroErrorCodes, KitaroMessageType, logger} from "../utils";
+import { IKitaroReply, KitaroFunctions } from "../utils/kitaro_message";
 export type AnyPromiseFunction = (...args: any[]) => Promise<any>;
 interface IFunctionStore {
   [key: string]: AnyPromiseFunction;
@@ -9,46 +10,56 @@ export class RemoteKitaro {
   private ip: string;
   private port: number;
   private Sender: ReqSocket;
-  private functions: IFunctionStore;
+  private functions: KitaroFunctions;
+  private exec: IFunctionStore;
 
   constructor(ip: string, port: number) {
     this.ip = ip;
     this.port = port;
     this.Sender = new ReqSocket();
-    this.functions = {};
+    this.functions = [];
+    this.exec = {};
   }
 
-  public async connect() {
+  public connect = async () => {
     try {
-      this.Sender.connect(this.port, this.ip)
+      this.Sender.connect(this.port, this.ip);
       return this.send({type: KitaroMessageType.KITARO_REGISTER});
     } catch (err) {throw new KitaroError(KitaroErrorCodes.connError,
       `Could not connect to Kitaro Microservice @${this.ip}:${this.port}`);
     }
   }
 
-  public async close() {
+  public close = async () => {
     try {
       this.Sender.close();
-    } catch(err) {
-      throw new KitaroError(KitaroErrorCodes.connError ,"Could not close socket");
+    } catch (err) {
+      throw new KitaroError(KitaroErrorCodes.connError, "Could not close socket");
     }
-    return this
+    return this;
   }
 
-  private async handleRegisterResponse(data: any) {
+  private handleRegisterResponse = async (data: KitaroFunctions) => {
     this.functions = data;
     logger.info(`Received function list from Kitaro Microservice @${this.ip}:${this.port}`);
 
-    return data
+    // for each of the functions add wrapper to execute
+    // check if this can result in prototype injection
+    this.functions.forEach(f => {
+      this.exec[f.label] = (...args) => this.send({
+        fn: f.label,
+        params: args,
+        type: KitaroMessageType.KITARO_USE_FUNCTION,
+      });
+    });
+    return data;
   }
 
-  private async handleFunctionResponse(data: any) {
-    logger.info(data);
-  }
+  // for now just return the response
+  // TODO: keep usage statistics, offer option for analysis of performance
+  private handleFunctionResponse = async (data: IKitaroReply): Promise<IKitaroReply> => data;
 
-  private send(payload: IKitaroMessage) {
-    return new Promise((resolve, reject) => {
+  private send = (payload: IKitaroMessage) => new Promise((resolve, reject) => {
       this.Sender.send(payload, (resp: any) => {
         // handle based on type of message
         switch (payload.type) {
@@ -61,6 +72,5 @@ export class RemoteKitaro {
               `Unknown message type received from Kitaro Microservice @${this.ip}:${this.port}`));
         }
       });
-    });
-  }
+  })
 }
