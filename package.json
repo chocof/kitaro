@@ -42,6 +42,10 @@
   },
   "keywords": [],
   "dependencies": {
+    "@types/axon": "^2.0.0",
+    "@types/dotenv": "^6.1.0",
+    "@types/node": "^10.12.18",
+    "@types/winston": "^2.4.4",
     "axon": "^2.0.3",
     "dotenv": "^5.0.1",
     "sinon": "^6.0.0",
